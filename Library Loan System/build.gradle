@@ -1,0 +1,43 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.9'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "mysql:mysql-connector-java:8.0.14"
+    implementation 'org.hibernate:hibernate-core:5.4.29.Final'
+
+    implementation 'org.junit.jupiter:junit-jupiter:5.6.2'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+javafx {
+    version = "15.0.1"
+    modules = ['javafx.controls', 'javafx.fxml']
+}
+
+test {
+    useJUnitPlatform()
+}
+
+sourceSets{
+    main{
+        resources{
+            srcDirs = ["src/main/java"]
+            includes = ["**/*.jpg"]
+        }
+    }
+}
+
+mainClassName = "com.example.MainApp"
+
+
